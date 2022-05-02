@@ -7,9 +7,10 @@ For our domain of interest we decided to focus on voter registration in the Unit
 
 ### What are other examples of data-driven projects related to this domain?
 
-- Example 1
-- Example 2
-- Example 3
+- Comparing data on voter registration based on regional information.
+- Comparing data on voter registration based on gender.
+- Comparing data on voter registration based on political party identification.
+
 
 ### What data-driven questions do you hope to answer about this domain? 
 
