@@ -3,7 +3,7 @@
 ## Domain of Interest: Voter Registration in the United States 
 
 ### Why are you interested in this field/domain? 
-For our domain of interest we decided to focus on voter registration in the United States for the November 2020 Presidential Election. We became intrigued by datasets regarding voting after we discussed them in lecture. **I am a Law, Societies, & Justice major, so I first brought up this idea to our group and we expanded upon it.** We decided to categorize voter registration in 2020 by race in order to gain more of an understanding of the disparities within **our “free” country’s** election process. Unfortunately, voter registration in the United States can directly correlate with an individual's race. Voter registration laws are often changed in order to make it more difficult for minority groups to vote and many choose to not even register because voting booths are not very accessible. Voting booths are often placed two towns over from communities whose populations are made up of mainly minority groups, making it extremely difficult for people of color to vote as well as those in low-income areas. **For these reasons, people of color often feel discouraged to even register to vote, feeling like their vote wouldn’t even matter anyways.** 
+For our domain of interest we decided to focus on voter registration in the United States for the November 2020 Presidential Election. We became intrigued by datasets regarding voting after we discussed them in lecture. We decided to categorize voter registration in 2020 by race in order to gain more of an understanding of the disparities within country’s election process. Unfortunately, voter registration in the United States can directly correlate with an individual's race. Voter registration laws are often changed in order to make it more difficult for minority groups to vote and many choose to not even register because voting booths are not very accessible. Voting booths are often placed two towns over from communities whose populations are made up of mainly minority groups, making it extremely difficult for people of color to vote as well as those in low-income areas.
 
 ### What are other examples of data-driven projects related to this domain?
 
@@ -85,7 +85,7 @@ The data presented in this table was collected by the US Census Bureau, the prin
 
 **How many features (columns) are in the data?**
  
- 16
+ 10
 
 **What questions (from above) can be answered using the data in this dataset?**
 
