@@ -77,7 +77,7 @@ U.S. Census Bureau: [Voting and Registration in the Election of November 2020](h
 
 **How was the data collected?**
 
-The data presented in this table was collected by the US Census Bureau, the principal agency of the United States Federal Statistical System, which collects and produces data regarding the American people and the economy.
+The data was collected by the US Census Bureau by gathering data (for the '20 November election) on: reported voting and registration by race, hispanic origin, sex, and age.
 
 **How many observations (rows) are in your data?** 
 
@@ -89,7 +89,7 @@ The data presented in this table was collected by the US Census Bureau, the prin
 
 **What questions (from above) can be answered using the data in this dataset?**
 
-All the questions could be answered by using this dataset except for exactly how this data was collected.
+I used this dataset to answer all of the above questions
 
 
 
