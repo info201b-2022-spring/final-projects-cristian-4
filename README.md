@@ -1,6 +1,3 @@
-# final-projects-cristian-4
-final-projects-cristian-4 created by GitHub Classroom
-
 # Voter Registration Data Analysis
 
 ## Domain of Interest: Voter Registration in the United States 
