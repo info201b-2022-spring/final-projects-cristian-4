@@ -89,7 +89,7 @@ The data was collected by the US Census Bureau by gathering data (for the '20 No
 
 **What questions (from above) can be answered using the data in this dataset?**
 
-I used this dataset to answer all of the above questions
+I used this dataset to answer all of the above questions except for how the data was collected, and by who.
 
 
 
