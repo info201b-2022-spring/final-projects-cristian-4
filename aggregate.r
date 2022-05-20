@@ -56,22 +56,3 @@ latino_filtered <- latino_filtered%>%
 tab <- merge(x=white_filtered, y=black_filtered, by="Demographic")
 all_data <- merge(x=tab,y=latino_filtered, by="Demographic")
 
-
-
-tab <- tab%>%distinct(
-  tab$W_Total_Population)
-tab <- tab%>%distinct(
-  tab$W_Demographic, 
-  tab$W_Total_Population, 
-  tab$W_Total_Citizen_Population, 
-  tab$W_Reported_Registered_Number,
-  tab$W_Reported_Registered_Percent,
-  tab$W_Reported_Not_Registered_Number,
-  tab$W_Reported_Not_Registered_Percent,
-  tab$B_Demographic, 
-  tab$B_Total_Population, 
-  tab$B_Total_Citizen_Population, 
-  tab$B_Reported_Registered_Number,
-  tab$B_Reported_Registered_Percent,
-  tab$B_Reported_Not_Registered_Number,
-  tab$B_Reported_Not_Registered_Percentn)
