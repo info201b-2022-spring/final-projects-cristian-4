@@ -1,54 +1,40 @@
-install.packages("lubridate")
 install.packages("tidyverse")
 install.packages("dplyr")
+library(dplyr)
+library(tidyverse)
 
-white_df <- read.csv("WhiteVotingRegistration.csv")
-black_df <- read.csv("AfricanAmericanVotingRegistration.csv")
-latino_df <- read.csv("LatinoVotingRegistration.csv")
+white_df <- read.csv("/Users/silpaajjarapu/Documents/INFO201/final-projects-cristian-4/white_alone_formatted.csv")
+black_df <- read.csv("/Users/silpaajjarapu/Documents/INFO201/final-projects-cristian-4/black_alone_formatted.csv")
+latino_df <- read.csv("/Users/silpaajjarapu/Documents/INFO201/final-projects-cristian-4/latino_alone_formatted.csv")
 
 #create summary info list
-summary_info <- list()
-
+summary_info <-list()
 
 #White registration numbers
-summary_data_info$num_observations <- nrow(white_df)
+summary_info$num_observations <- nrow(white_df)
 
-summary_data_info$num_features <- ncol(white_df)
+summary_info$num_features <- ncol(white_df)  
 
-summary_data_info$white_reported_registered <- white_df %>%
-  filter(reportedregistered == max(reportedregistered, na.rm = T)) %>%
-  select(bothsexes, reportedregistered, number)
+total_white_registered <- white_df[1,4]
 
 #Black registration numbers
-summary_data_info$num_observations <- nrow(black_df)
+summary_info$num_observations <- nrow(black_df)
 
-summary_data_info$num_features <- ncol(black_df)
+summary_info$num_features <- ncol(black_df)
 
-summary_data_info$black_reported_registered <- black_df %>%
-  filter(reportedregistered == max(reportedregistered, na.rm = T)) %>%
-  select(bothsexes, reportedregistered, number) 
-
-#Latino registration numbers
-summary_data_info$num_observations <- nrow(latino_df)
-
-summary_data_info$num_features <- ncol(latino_df)
-
-summary_data_info$white_reported_registered <- latino_df %>%
-  filter(reportedregistered == max(reportedregistered, na.rm = T)) %>%
-  select(bothsexes, reportedregistered, number)
-
-#number within white thats not registered
-summary_data_info$total_white_not_registered <- white_df %>%
-  filter(reportednotregistered == max(reportednotregistered, na.rm = T)) %>%
-  select(bothsexes, reportednotregistered, number)
-
-#number within black thats not registered
-summary_data_info$total_black_not_registered <- black_df %>%
-  filter(reportednotregistered == max(reportednotregistered, na.rm = T)) %>%
-  select(bothsexes, reportednotregistered, number)
-
-#number within latino thats not registered
-summary_data_info$total_latino_not_registered <- latino_df %>%
-  filter(reportednotregistered == max(reportednotregistered, na.rm = T)) %>%
-  select(bothsexes, reportednotregistered, number)
+total_black_registered <- black_df[1,4]
   
+#Latino registration numbers
+summary_info$num_observations <- nrow(latino_df)
+
+summary_info$num_features <- ncol(latino_df)
+
+total_latino_registered <- latino_df[1,4]
+  
+#absolute difference between black and white
+
+black_white_registration_difference <- abs(total_white_registered - total_black_registered)
+  
+#absolute difference between latino and white
+
+latino_white_registration_difference <- abs(total_white_registered - total_latino_registered)
