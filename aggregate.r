@@ -55,4 +55,4 @@ latino_filtered <- latino_filtered%>%
 
 tab <- merge(x=white_filtered, y=black_filtered, by="Demographic")
 all_data <- merge(x=tab,y=latino_filtered, by="Demographic")
-
+view(all_data)
