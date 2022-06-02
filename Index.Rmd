@@ -8,5 +8,18 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+##Introduction
 
 The domain of interest this data exploration focuses on is voter registration. Specifically, we will utilize data surrounding the number of individuals who registered to vote in the November 2020 United States presidential election. Our data is being directly gathered by the United States Census Bureau. The data has been categorized by race into three groups: white, Black, and Latino. We have chosen to analyze the data by race only, meaning we will be looking at the voter registration data for both sexes of each pertinent race as well as every age group over 18 years. Unfortunately, whether an individual is registered to vote can directly be correlated with one’s race in the United States.Voter registration laws are often changed in order to make it more difficult for minority groups to vote and many choose to not even register because voting booths are not very accessible. Voting booths are often placed two towns over from communities whose populations are made up of mainly minority groups, making it extremely difficult for people of color to vote as well as those in low-income areas. For these reasons, people of color often feel discouraged to even register to vote, feeling like their vote wouldn’t even matter anyways. Despite priding itself on being a ‘free’ country with a fair and equal election process, the United States has continued to overlook an entire group of US citizens who have the right to vote just as much as anyone else. This is why we have chosen to examine data surrounding voter registration, the disparities are so obvious to not further analyze this data.
+
+##Summary Info Script
+
+The number of white citizens that are registered to vote _'total_white_registered'_ using _'summary_info$num_observations'_ and _'summary_info$num_features'_ using the white_df (white dataframe).
+
+The number of black citizens that are registered to vote _'total_black_registered'_ using _'summary_info$num_observations'_ and _'summary_info$num_features'_ using the black_df (black dataframe).
+
+The number of white citizens that are registered to vote _'total_latino_registered'_ using _'summary_info$num_observations'_ and _'summary_info$num_features'_ using the latino_df (katinx dataframe).
+
+The difference between the number of black and white registered individuals is _'black_white_registration_difference_', which is calculated with _'abs(total_white_registered - total_black_registered)'_.
+
+The difference between the number of latino and white registered individuals is _'latino_white_registration_difference'_, which is calculated with _'abs(total_white_registered - total_latino_registered)_'.
