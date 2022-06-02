@@ -7,6 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+source("aggregate.r", local = knitr::knit_global())
+source("Scatter Plot.R", local = knitr::knit_global())
+source("Bar Chart.R", local = knitr::knit_global())
+source("Grouped Bar Chart.R", local = knitr::knit_global())
 ```
 ##Introduction
 
@@ -23,3 +27,53 @@ The number of white citizens that are registered to vote _'total_latino_register
 The difference between the number of black and white registered individuals is _'black_white_registration_difference_', which is calculated with _'abs(total_white_registered - total_black_registered)'_.
 
 The difference between the number of latino and white registered individuals is _'latino_white_registration_difference'_, which is calculated with _'abs(total_white_registered - total_latino_registered)_'.
+
+##Aggregate Table 
+
+
+```{r table, echo=FALSE}
+all_data
+```
+
+
+This table of aggregate data combines all the voting registration data from all three datasets used in this project; White, Black, and Latino data. Each dataset is first filtered to only include the ‘Both Sexes’ observation, then filtered further to only include the first seven columns (total population, total citizen population, reported registered number, reported registered percent, reported not registered number, and reported not registered percent). Finally, each column is renamed so that it is easy to distinguish the data between each race (W = White, B = Black, L = Latino). After creating these filtered data frames, all of them are merged together to create a table that compares all three data frames side by side. 
+
+##Charts
+
+###Chart 1: Scatter Plot
+
+```{r, echo=FALSE}
+plot(VotingPlot)
+```
+
+
+This chart is a scatter plot that shows the relationship between Citizen Population, in the thousands, and Reported Voting across race. I included it because I thought that it would be useful to see a distribution of the voting, and make any outliers clearly visible. As well as visually it's helpful to have the points on the plot be different colors so they are more easily identifiable. 
+
+###Chart 2: Bar Chart 
+
+```{r, echo=FALSE}
+plot(registration_bar)
+```
+
+
+This chart is a bar chart that shows how many people, in the thousands, were registered to vote, for each race. This is calculated using the totals across both sexes and age ranges for each race. I included this bar chart because I thought that it would be useful to have this visualization. Our datasets had a lot of very similar named categories and sort of overlapping values (i.e. percent reported voted, and reported voted, as well as no response, etc.) which could be confusing if you are just looking at the data set as is. I thought that including this bar chart with very simple categories would allow us to easily see and compare differences in voter registration. This chart shows that according to our data, White reported voter registration was much higher compared to Black and Latino reported voter registration in 2020 election
+
+
+Note: for some reason I ran into an error that I was unable to correct where it wouldn’t let me select different colors for each bar, I wanted to do that to make the chart easier to understand. 
+
+
+###Chart 3: Grouped Bar Chart 
+
+```{r, echo=FALSE}
+plot(grouped_bar)
+```
+ 
+
+This chart is a grouped bar chart that shows reported voting, in the thousands, for each race, and each race is grouped by how males and females reported voting. Each bar is the male and female total voting across all age ranges: 18-75 and older. I included this chart because I thought that it would be a good idea to have something a little more detailed. This dataset deals with very big numbers, millions of people. And I wanted a way to break that down into something more than just the umbrella of "race". I thought that having bars for each of the age groups and then replicated across race would be over crowded, so this seemed like a good option. This chart shows us that according to our data, white voting was still higher in 2020, and interestingly female voting was slightly higher than male voting across all 3 races. I think this chart raises some interesting questions; mainly "why"? Which is something that might not be answerable but would definitely require further analysis.  
+
+
+
+
+
+
+
