@@ -1,0 +1,12 @@
+---
+title: "Introduction"
+author: "Silpa Ajjarapu, Hritika Singh, Cristian Martinez, Sarah Buch"
+date: '2022-05-23'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The domain of interest this data exploration focuses on is voter registration. Specifically, we will utilize data surrounding the number of individuals who registered to vote in the November 2020 United States presidential election. Our data is being directly gathered by the United States Census Bureau. The data has been categorized by race into three groups: white, Black, and Latino. We have chosen to analyze the data by race only, meaning we will be looking at the voter registration data for both sexes of each pertinent race as well as every age group over 18 years. Unfortunately, whether an individual is registered to vote can directly be correlated with one’s race in the United States.Voter registration laws are often changed in order to make it more difficult for minority groups to vote and many choose to not even register because voting booths are not very accessible. Voting booths are often placed two towns over from communities whose populations are made up of mainly minority groups, making it extremely difficult for people of color to vote as well as those in low-income areas. For these reasons, people of color often feel discouraged to even register to vote, feeling like their vote wouldn’t even matter anyways. Despite priding itself on being a ‘free’ country with a fair and equal election process, the United States has continued to overlook an entire group of US citizens who have the right to vote just as much as anyone else. This is why we have chosen to examine data surrounding voter registration, the disparities are so obvious to not further analyze this data.
