@@ -1,29 +1,42 @@
 #shiny installation
 
-
-#install.packages("tidyverse")
-#install.packages("dplyr")
-#install.packages("ggplot2")
-install.packages("fmsb")
 library(fmsb)
 library(shiny)
 library(dplyr)
 library(ggplot2)
 
-summary_page <- tabPanel(
-  "Summary",
-  titlePanel("Summary Takeaway for Scatterplot")
-  )
+#select columns in dplyr
 
 analysis_page <- tabPanel(
-  "Analysis",
-#this is where the filtering stuff goes
+  "Interactive Page",
+titlePanel("Reported Voted vs. Total Citizen Population based on Race"),
+sidebarLayout(
+  sidebarPanel(
+    h5("Controls"),
+    sliderInput(
+      inputId = "population",
+      label = "Filter by max population number:",
+      min = 0,
+      max = 182000,
+      value = 182000
+    )
+  ),
+  mainPanel(
+    plotOutput(outputId = "scatter", click = "plot_click"),
+    tableOutput(outputId = "specifics")
+  ),
+)
   )
+
+summary_page <- tabPanel(
+  "Summary Takeaway",
+  titlePanel("Summary Takeaway for Scatterplot")
+)
 
 ui <- navbarPage(
   title = "Voting Registration Based on Race",
   summary_page,
-  analysis_page  
+  analysis_page,
 )
 
 #load in the data
@@ -54,25 +67,7 @@ both_sex_df <- merged_df[c(1:6, 19:24, 37:42), ]
 filter_df <- both_sex_df
 
 #set up the UI
-ui <- fluidPage(
-  titlePanel("Reported Voted vs. Total Citizen Population based on Race"),
-  sidebarLayout(
-    sidebarPanel(
-      h5("Controls"),
-      sliderInput(
-        inputId = "population",
-        label = "Filter by max population number:",
-        min = 0,
-        max = 182000,
-        value = 182000
-        )
-    ),
-    mainPanel(
-      plotOutput(outputId = "scatter", click = "plot_click"),
-      tableOutput(outputId = "specifics")
-    ),
-  )
-)
+  
 
 #server logic
 server <- function(input, output){
@@ -87,7 +82,7 @@ server <- function(input, output){
     ))  
   })
   output$specifics <- renderTable({
-    nearPoints(filter_df, input$plot_click, xvar = "Total_Citizen_Population", yvar = "ReportedVoted")
+    nearPoints(filter_df, coordinfo = input$plot_click, xvar = "Total_Citizen_Population", yvar = "ReportedVoted")
   })
 }
 
