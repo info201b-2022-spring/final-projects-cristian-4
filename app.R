@@ -1,12 +1,23 @@
-#shiny installation
+#title: "Voting Registration App"
+#authors: Cristian Martinez, Hritika Singh, Sarah Buch, Silpa Ajjarapu,
+
+#Load libraries and Shiny installation
 
 library(fmsb)
 library(shiny)
 library(dplyr)
 library(ggplot2)
 
-#select columns in dplyr
+#Introduction Page
 
+introdocution_page <- tabPanel(
+  "Introduction",
+  titlePanel("Introduction")
+)
+
+##Add intro
+
+#1st Interactive Page 
 analysis_page <- tabPanel(
   "Interactive Page",
 titlePanel("Reported Voted vs. Total Citizen Population based on Race"),
@@ -28,11 +39,32 @@ sidebarLayout(
 )
   )
 
-summary_page <- tabPanel(
-  "Summary Takeaway",
-  titlePanel("Summary Takeaway for Scatterplot")
+#Second Interactive Page
+interactive_page <- tabPanel(
+  "Voting Registration based on Age",
+  titlePanel("Voting Registration of Every Race Based on Age"),
+  sidebarLayout(
+    sidebarPanel(
+      h3("Ages"),
+      selectInput(
+        inputId = "Age Groups", label = h3("Filter by Age Group"),
+        choices = c("18 to 24 years", "25 to 44 years", "45 to 64", "65-74 years", "75 years and over", "Total 18 years and over")
+      )
+    ),
+    mainPanel(
+      plotOutput(outputId = "age_plot", brush = "plot_brush")
+    )
+  )
 )
 
+#Third Interactive Page
+  ui <- navbarPage(
+    title = "Voting Registration Based on Race",
+    summary_page,
+    analysis_page,
+    # chart_page,
+  )
+  
 # chart_page <- tabPanel(
 #   "Bar chart", 
 # titlePanel("Reported Voting for Each Race Grouped by Sex"),
@@ -50,12 +82,14 @@ summary_page <- tabPanel(
 #   )
 # )
 
-ui <- navbarPage(
-  title = "Voting Registration Based on Race",
-  summary_page,
-  analysis_page,
-  # chart_page,
-)
+#Summary Page 
+
+summary_page <- tabPanel(
+  "Summary Takeaway",
+  titlePanel("Summary Takeaway for Scatterplot")
+  )
+
+
 
 #load in the data
 white <- read.csv("white_alone_formatted.csv", stringsAsFactors = FALSE)
