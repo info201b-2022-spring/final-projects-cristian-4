@@ -33,10 +33,28 @@ summary_page <- tabPanel(
   titlePanel("Summary Takeaway for Scatterplot")
 )
 
+# chart_page <- tabPanel(
+#   "Bar chart", 
+# titlePanel("Reported Voting for Each Race Grouped by Sex"),
+# sidebarLayout(
+#   sidebarPanel(
+#     h3("Age Groups"),
+#     selectInput(inputId = "select", label = h5("Select an Age Group"),
+#         choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3), 
+#         selected = 1)
+#     ),
+#   mainPanel(
+#     plotOutput(outputId = "bar"),
+#     
+#    ),
+#   )
+# )
+
 ui <- navbarPage(
   title = "Voting Registration Based on Race",
   summary_page,
   analysis_page,
+  # chart_page,
 )
 
 #load in the data
