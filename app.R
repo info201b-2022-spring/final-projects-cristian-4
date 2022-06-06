@@ -21,7 +21,11 @@ ui <- navbarPage(
 
 introduction_page <- tabPanel(
   "Introduction",
-  titlePanel("Introductory Page")
+  titlePanel("Introductory Page"),
+  p("This project takes a deeper look into voter registration data surrounding the November 2020 United States presidential election. The data utilized for this project was gathered from the U.S. Census Bureau. Specifically, this project will look at voter registration data and its correlation with race. Each dataset is categorized into three groups: Black, Latinx, and white. Each dataset is formatted by age group, gender, and overall statistics. This project mainly utilizes the comprehensive data gathered for each race. For our domain of interest, we chose voter registration data because our group became intrigued by the obvious disparities within each race group. Unfortunately, voter registration in the United States can directly correlate with an individual's race. Voter registration laws are often changed in order to make it more difficult for minority groups to vote and many choose to not even register because voting booths are not very accessible. Voting booths are often placed two towns over from communities whose populations are made up of mainly minority groups, making it extremely difficult for people of color to vote as well as those in low-income areas. For these reasons, our group chose to gain a deeper understanding of this unfair correlation. Each interactive page within this project seeks to answer one of our three questions. These three questions are the following: 
+-How does voting registration in each race differ by age groups?
+-How does the number of people who voted compare to the total citizen population based on race?
+-What did voting look like demographically, specifically with age and sex groups, in the 2020 election?")
 )
 
 #1st Interactive Page 
@@ -90,9 +94,8 @@ interactive_page <- tabPanel(
 
 summary_page <- tabPanel(
   "Summary Takeaway",
-  titlePanel("Summary Takeaway for Scatterplot"),
-  titlePanel("Summary Takeaway for Bar Graph.")
-  p("When looking specifically at the breakdown of voting registration in all three races 
+  titlePanel("Summary Takeaways"),
+  p("Bar Graph: When looking specifically at the breakdown of voting registration in all three races 
     based on age groups, it is evident those aged between 18 to 64 years old are the most consistent 
     in registering. This could be becasue these individuals are further educated about the current 
     political climate, have access to information and news, or have access to voting. Although, it 
