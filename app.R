@@ -21,10 +21,8 @@ ui <- navbarPage(
 
 introduction_page <- tabPanel(
   "Introduction",
-  titlePanel("Introduction")
+  titlePanel("Introductory Page")
 )
-
-##Add intro
 
 #1st Interactive Page 
 analysis_page <- tabPanel(
