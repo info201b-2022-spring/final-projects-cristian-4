@@ -10,13 +10,15 @@ library(ggplot2)
 
 #Set up UI
 
-ui <- navbarPage(
-  title = "Voting Registration Based on Race",
-  introduction_page,
-  analysis_page,
-  interactive_page,
-  summary_page,
-  
+# ui <- navbarPage(
+#   title = "Voting Registration Based on Race",
+#   introduction_page,
+#   analysis_page,
+#   interactive_page,
+#   summary_page,
+# )
+<<<<<<< Updated upstream
+#   
 #Introduction Page
 introduction_page <- tabPanel(
   "Introduction",
@@ -36,6 +38,14 @@ this project seeks to answer one of our three questions."),
       How does voting registration in each race differ by age groups?
       How does the number of people who voted compare to the total citizen population based on race?
       What did voting look like demographically, specifically with age and sex groups, in the 2020 election?")
+=======
+
+#Introduction Page
+
+introduction_page <- tabPanel(
+  "Introduction",
+  titlePanel("Introduction"),
+>>>>>>> Stashed changes
 )
 
 #1st Interactive Page 
@@ -69,7 +79,7 @@ interactive_page <- tabPanel(
       h3("Ages"),
       selectInput(
         inputId = "age_groups", label = h3("Filter by Age Group"),
-        choices = df$Age_and_Sex)
+        choices = both_sex_df$Age_and_Sex)
     ),
     mainPanel(
       plotOutput(outputId = "age_plot", brush = "plot_brush")
@@ -81,7 +91,7 @@ interactive_page <- tabPanel(
 #Third Interactive Page
  
     # chart_page,
-  )
+  # )
   
 # chart_page <- tabPanel(
 #   "Bar chart", 
@@ -103,6 +113,7 @@ interactive_page <- tabPanel(
 #Summary Page Takeaways
 summary_page <- tabPanel(
   "Summary Takeaway",
+<<<<<<< Updated upstream
    titlePanel("Summary Takeaways for Interactive Page 1"),
    p("Through my analysis of the number of individuals who reported voting vs. the total citizen population, I found that among the 
 races I analyzed, the white race group was a clear outlier. The white group represented all three of the outliers on the graph. When looking at the
@@ -128,6 +139,23 @@ and latino race groups."),
  titlePanel("Summary Takeaways for Interactive Page 3"),
   p("cristians stuff here")
 )
+=======
+  titlePanel("Summary Takeaway for Scatterplot"),
+  p("An interesting takeaway from this dataset is that")
+  )
+>>>>>>> Stashed changes
+
+ui <- navbarPage(
+  title = "Voting Registration Based on Race",
+  introduction_page,
+  analysis_page,
+  interactive_page,
+  summary_page,
+)
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 
 #load in the data
 white <- read.csv("white_alone_formatted.csv", stringsAsFactors = FALSE)
@@ -152,6 +180,7 @@ black <- black %>%
 lw_df <- rbind(white, latino)
 merged_df <- rbind(lw_df, black)
 
+
 both_sex_df <- merged_df[c(1:6, 19:24, 37:42), ]
 
 filter_df <- both_sex_df
@@ -170,9 +199,11 @@ server <- function(input, output){
     ))  
   })
   output$age_plot <- renderPlot({
-    registration_bar <- ggplot(chart_df, aes(y=Registered, x=Race)) +
-      geom_bar(stat = "identity", fill=rgb(0.1,0.4,0.5,0.7) ) +
+    filter_out <- filter(both_sex_df, !Age_and_Sex == "BOTH_SEX_Total")
+    registration_bar <- ggplot(filter_out, aes(fill=Age_and_Sex, y=Registered, x=Race)) +
+      geom_bar(position = "stack", stat = "identity") +
       ylim(0, 150000)
+     
     
     print(registration_bar + labs(
       title = "Voter Registration Across Race",
