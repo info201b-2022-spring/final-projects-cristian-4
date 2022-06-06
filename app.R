@@ -29,24 +29,24 @@ introduction_page <- tabPanel(
 #1st Interactive Page 
 analysis_page <- tabPanel(
   "Interactive Page",
-titlePanel("Reported Voted vs. Total Citizen Population based on Race"),
-sidebarLayout(
-  sidebarPanel(
-    h5("Controls"),
-    sliderInput(
-      inputId = "population",
-      label = "Filter by max population number:",
-      min = 0,
-      max = 182000,
-      value = 182000
-    )
-  ),
-  mainPanel(
-    plotOutput(outputId = "scatter", click = "plot_click"),
-    tableOutput(outputId = "specifics")
-  ),
-)
+  titlePanel("Reported Voted vs. Total Citizen Population based on Race"),
+  sidebarLayout(
+    sidebarPanel(
+      h5("Controls"),
+      sliderInput(
+        inputId = "population",
+        label = "Filter by max population number:",
+        min = 0,
+        max = 182000,
+        value = 182000
+      )
+    ),
+    mainPanel(
+      plotOutput(outputId = "scatter", click = "plot_click"),
+      tableOutput(outputId = "specifics")
+    ),
   )
+)
 
 #Second Interactive Page
 interactive_page <- tabPanel(
@@ -148,9 +148,6 @@ server <- function(input, output){
     title = "Total Citizen Population and Reported Voting",
     y= "Reported Voting", x = "Citizen Population (in Thousands)"
     ))  
-  })
-  output$specifics <- renderTable({
-    nearPoints(filter_df, coordinfo = input$plot_click, xvar = "Total_Citizen_Population", yvar = "ReportedVoted")
   })
   output$age_plot <- renderPlot({
     registration_bar <- ggplot(chart_df, aes(y=Registered, x=Race)) +
