@@ -116,7 +116,11 @@ and latino race groups."),
     vote as this age group is the backbone for majority of the political activisim everyone sees 
     today."),
  titlePanel("Summary Takeaways for Interactive Page 3"),
-  p("cristians stuff here")
+  p("I looked at Reported Voting across race grouped by sex. One takeaway that I had was the increased number of white voting. There was a very big increase/difference 
+  in the number of white voting compared to Latino/Hispanic and Black votes. The drastic increase made me question the methods that the data was collected because I 
+  did not feel that that difference was representative of the whole nation. I felt that maybe certain areas were not reached out to or responded in time. Another 
+  trend that I noticed was that when looking at the totals, in all three races, the female vote was slightly higher than the male vote. I am unsure exactly what 
+  conclusions if any could be drawn from this, but the fact that it was the same trend across all three races was interesting to me.")
 ),
 
 ui <- navbarPage(
