@@ -6,23 +6,8 @@
 library(shiny)
 library(dplyr)
 library(ggplot2)
-<<<<<<< HEAD
 
-#Set up UI
-
-# ui <- navbarPage(
-#   title = "Voting Registration Based on Race",
-#   introduction_page,
-#   analysis_page,
-#   interactive_page,
-#   summary_page,
-# )
-
-#   
-=======
-   
->>>>>>> fc8002ea2acb47d3b20897240b0ea6495936e685
-#Introduction Page
+#Introduction
 introduction_page <- tabPanel(
   "Introduction",
   titlePanel("Introductory Page"),
@@ -40,23 +25,8 @@ this project seeks to answer one of our three questions."),
   p("These three questions are the following: 
       How does voting registration in each race differ by age groups?
       How does the number of people who voted compare to the total citizen population based on race?
-<<<<<<< HEAD
-      What did voting look like demographically, specifically with age and sex groups, in the 2020 election?"),
-
-=======
       What did voting look like demographically, specifically with age and sex groups, in the 2020 election?")
->>>>>>> fc8002ea2acb47d3b20897240b0ea6495936e685
-
-#Introduction Page
-introduction_page <- tabPanel(
-  "Introduction",
-  titlePanel("Introduction"),
-<<<<<<< HEAD
-
-),
-=======
 )
->>>>>>> fc8002ea2acb47d3b20897240b0ea6495936e685
 
 #1st Interactive Page 
 analysis_page <- tabPanel(
@@ -78,7 +48,7 @@ analysis_page <- tabPanel(
       tableOutput(outputId = "data")
     ),
   )
-),
+)
 
 #Second Interactive Page
 interactive_page <- tabPanel(
@@ -123,10 +93,6 @@ interactive_page <- tabPanel(
 #Summary Page Takeaways
 summary_page <- tabPanel(
   "Summary Takeaway",
-<<<<<<< HEAD
-
-=======
->>>>>>> fc8002ea2acb47d3b20897240b0ea6495936e685
    titlePanel("Summary Takeaways for Interactive Page 1"),
    p("Through my analysis of the number of individuals who reported voting vs. the total citizen population, I found that among the 
 races I analyzed, the white race group was a clear outlier. The white group represented all three of the outliers on the graph. When looking at the
@@ -150,17 +116,12 @@ and latino race groups."),
     vote as this age group is the backbone for majority of the political activisim everyone sees 
     today."),
  titlePanel("Summary Takeaways for Interactive Page 3"),
-  p("cristians stuff here")
-<<<<<<< HEAD
+  p("I looked at Reported Voting across race grouped by sex. One takeaway that I had was the increased number of white voting. There was a very big increase/difference 
+  in the number of white voting compared to Latino/Hispanic and Black votes. The drastic increase made me question the methods that the data was collected because I 
+  did not feel that that difference was representative of the whole nation. I felt that maybe certain areas were not reached out to or responded in time. Another 
+  trend that I noticed was that when looking at the totals, in all three races, the female vote was slightly higher than the male vote. I am unsure exactly what 
+  conclusions if any could be drawn from this, but the fact that it was the same trend across all three races was interesting to me.")
 ),
-
-  titlePanel("Summary Takeaway for Scatterplot"),
-  p("An interesting takeaway from this dataset is that")
-  )
-
-=======
-)
->>>>>>> fc8002ea2acb47d3b20897240b0ea6495936e685
 
 ui <- navbarPage(
   title = "Voting Registration Based on Race",
@@ -169,10 +130,6 @@ ui <- navbarPage(
   interactive_page,
   summary_page,
 )
-<<<<<<< HEAD
-
-=======
->>>>>>> fc8002ea2acb47d3b20897240b0ea6495936e685
 
 #load in the data
 white <- read.csv("white_alone_formatted.csv", stringsAsFactors = FALSE)
