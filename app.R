@@ -47,7 +47,7 @@ analysis_page <- tabPanel(
       h5("Controls"),
       sliderInput(
         inputId = "population",
-        label = "Filter by max population number:",
+        label = "Filter by Citizen Population Number:",
         min = 0,
         max = 182000,
         value = 182000
