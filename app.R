@@ -8,6 +8,15 @@ library(shiny)
 library(dplyr)
 library(ggplot2)
 
+#Set up UI
+
+ui <- navbarPage(
+  title = "Voting Registration Based on Race",
+  introduction_page,
+  analysis_page,
+  interactive_page,
+  summary_page,
+  
 #Introduction Page
 
 introdocution_page <- tabPanel(
@@ -47,9 +56,8 @@ interactive_page <- tabPanel(
     sidebarPanel(
       h3("Ages"),
       selectInput(
-        inputId = "Age Groups", label = h3("Filter by Age Group"),
-        choices = c("18 to 24 years", "25 to 44 years", "45 to 64", "65-74 years", "75 years and over", "Total 18 years and over")
-      )
+        inputId = "age_groups", label = h3("Filter by Age Group"),
+        choices = df$Age_and_Sex)
     ),
     mainPanel(
       plotOutput(outputId = "age_plot", brush = "plot_brush")
@@ -57,11 +65,9 @@ interactive_page <- tabPanel(
   )
 )
 
+
 #Third Interactive Page
-  ui <- navbarPage(
-    title = "Voting Registration Based on Race",
-    summary_page,
-    analysis_page,
+ 
     # chart_page,
   )
   
@@ -87,6 +93,7 @@ interactive_page <- tabPanel(
 summary_page <- tabPanel(
   "Summary Takeaway",
   titlePanel("Summary Takeaway for Scatterplot")
+  p("An interesting takeaway from this dataset is that")
   )
 
 
@@ -118,10 +125,8 @@ both_sex_df <- merged_df[c(1:6, 19:24, 37:42), ]
 
 filter_df <- both_sex_df
 
-#set up the UI
-  
 
-#server logic
+#Server Logic
 server <- function(input, output){
   output$scatter <- renderPlot({
     filter_df <- filter(both_sex_df, Total_Citizen_Population <= input$population)
@@ -136,7 +141,18 @@ server <- function(input, output){
   output$specifics <- renderTable({
     nearPoints(filter_df, coordinfo = input$plot_click, xvar = "Total_Citizen_Population", yvar = "ReportedVoted")
   })
+  output$age_plot <- renderPlot({
+    registration_bar <- ggplot(chart_df, aes(y=Registered, x=Race)) +
+      geom_bar(stat = "identity", fill=rgb(0.1,0.4,0.5,0.7) ) +
+      ylim(0, 150000)
+    
+    print(registration_bar + labs(
+      title = "Voter Registration Across Race",
+      y = "Voter Registration (in Thousands)", x = "Race"
+    ))
+  })
 }
 
-#function that makes the shiny app
+
+#Function that Makes the Shiny App
 shinyApp(ui = ui, server = server)
