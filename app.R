@@ -99,10 +99,12 @@ summary_page <- tabPanel(
     in registering. This could be becasue these individuals are further educated about the current 
     political climate, have access to information and news, or have access to voting. Although, it 
     is important to note that most of those who responded as 'not registered' in each race was between
-    the 18 to 25 year old group. This is peculiar to me as I would believe that especially in the last
-    few years with the increase in the Black Lives Matter movement, there would be more 18 to 25 year
-    olds registering to vote as this age group is the backbone for majority of the political 
-    activisim everyone sees today.")
+    the 18 to 25 year old group. For example, 19.6% of the White population, 21.7% of the Black population
+    and 26.3% of the Latino population aged between 18 to 25 years old was reported as not registered.
+    This is peculiar to me as I would believe that especially in the last few years with the 
+    increase in the Black Lives Matter movement, there would be more 18 to 25 year olds registering to 
+    vote as this age group is the backbone for majority of the political activisim everyone sees 
+    today.")
   )
 
 
