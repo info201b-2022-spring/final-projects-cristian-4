@@ -19,7 +19,7 @@ ui <- navbarPage(
   
 #Introduction Page
 
-introdocution_page <- tabPanel(
+introduction_page <- tabPanel(
   "Introduction",
   titlePanel("Introduction")
 )
@@ -92,8 +92,17 @@ interactive_page <- tabPanel(
 
 summary_page <- tabPanel(
   "Summary Takeaway",
-  titlePanel("Summary Takeaway for Scatterplot")
-  p("An interesting takeaway from this dataset is that")
+  titlePanel("Summary Takeaway for Scatterplot"),
+  titlePanel("Summary Takeaway for Bar Graph.")
+  p("When looking specifically at the breakdown of voting registration in all three races 
+    based on age groups, it is evident those aged between 18 to 64 years old are the most consistent 
+    in registering. This could be becasue these individuals are further educated about the current 
+    political climate, have access to information and news, or have access to voting. Although, it 
+    is important to note that most of those who responded as 'not registered' in each race was between
+    the 18 to 25 year old group. This is peculiar to me as I would believe that especially in the last
+    few years with the increase in the Black Lives Matter movement, there would be more 18 to 25 year
+    olds registering to vote as this age group is the backbone for majority of the political 
+    activisim everyone sees today.")
   )
 
 
