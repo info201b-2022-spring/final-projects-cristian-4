@@ -17,7 +17,7 @@ library(ggplot2)
 #   interactive_page,
 #   summary_page,
 # )
-<<<<<<< Updated upstream
+
 #   
 #Introduction Page
 introduction_page <- tabPanel(
@@ -37,16 +37,16 @@ this project seeks to answer one of our three questions."),
   p("These three questions are the following: 
       How does voting registration in each race differ by age groups?
       How does the number of people who voted compare to the total citizen population based on race?
-      What did voting look like demographically, specifically with age and sex groups, in the 2020 election?")
-=======
+      What did voting look like demographically, specifically with age and sex groups, in the 2020 election?"),
+
 
 #Introduction Page
 
 introduction_page <- tabPanel(
   "Introduction",
   titlePanel("Introduction"),
->>>>>>> Stashed changes
-)
+
+),
 
 #1st Interactive Page 
 analysis_page <- tabPanel(
@@ -68,7 +68,7 @@ analysis_page <- tabPanel(
       tableOutput(outputId = "data")
     ),
   )
-)
+),
 
 #Second Interactive Page
 interactive_page <- tabPanel(
@@ -85,7 +85,7 @@ interactive_page <- tabPanel(
       plotOutput(outputId = "age_plot", brush = "plot_brush")
     )
   )
-)
+),
 
 
 #Third Interactive Page
@@ -113,7 +113,7 @@ interactive_page <- tabPanel(
 #Summary Page Takeaways
 summary_page <- tabPanel(
   "Summary Takeaway",
-<<<<<<< Updated upstream
+
    titlePanel("Summary Takeaways for Interactive Page 1"),
    p("Through my analysis of the number of individuals who reported voting vs. the total citizen population, I found that among the 
 races I analyzed, the white race group was a clear outlier. The white group represented all three of the outliers on the graph. When looking at the
@@ -138,12 +138,12 @@ and latino race groups."),
     today."),
  titlePanel("Summary Takeaways for Interactive Page 3"),
   p("cristians stuff here")
-)
-=======
+),
+
   titlePanel("Summary Takeaway for Scatterplot"),
   p("An interesting takeaway from this dataset is that")
   )
->>>>>>> Stashed changes
+
 
 ui <- navbarPage(
   title = "Voting Registration Based on Race",
@@ -152,10 +152,7 @@ ui <- navbarPage(
   interactive_page,
   summary_page,
 )
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 
 #load in the data
 white <- read.csv("white_alone_formatted.csv", stringsAsFactors = FALSE)
