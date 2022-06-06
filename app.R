@@ -7,7 +7,7 @@ library(shiny)
 library(dplyr)
 library(ggplot2)
 
-#Introduction Page
+#Introduction
 introduction_page <- tabPanel(
   "Introduction",
   titlePanel("Introductory Page"),
@@ -25,12 +25,12 @@ this project seeks to answer one of our three questions."),
   p("These three questions are the following: 
       How does voting registration in each race differ by age groups?
       How does the number of people who voted compare to the total citizen population based on race?
-      What did voting look like demographically, specifically with age and sex groups, in the 2020 election?"),
       What did voting look like demographically, specifically with age and sex groups, in the 2020 election?")
+)
 
 #1st Interactive Page 
 analysis_page <- tabPanel(
-  "Interactive Page",
+  "Interactive Page 1",
   titlePanel("Reported Voted vs. Total Citizen Population based on Race"),
   sidebarLayout(
     sidebarPanel(
